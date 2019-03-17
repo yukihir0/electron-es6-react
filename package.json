@@ -1,0 +1,27 @@
+{
+  "name": "electron-es6-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "webpack": "./node_modules/.bin/webpack",
+    "electron": "./node_modules/.bin/electron .",
+    "package": "./node_modules/.bin/electron-packager . electron-es6-react --platform=darwin --arch=x64"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "electron-packager": "^13.1.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "electron": "^4.1.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
