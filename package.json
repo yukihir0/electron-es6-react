@@ -2,7 +2,7 @@
   "name": "electron-es6-react",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "src/main/index.js",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack",
     "electron": "./node_modules/.bin/electron .",
