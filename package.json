@@ -22,6 +22,8 @@
   "dependencies": {
     "electron": "^4.1.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   }
 }
