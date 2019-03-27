@@ -1,8 +1,9 @@
 const path = require('path');
-const outputPath = path.join(__dirname, 'dist')
+const outputPath = path.join(__dirname, 'dist');
+const mode = 'development';
 
 const mainConfig = {
-  mode: 'development',
+  mode: mode,
   target: 'electron-main',
   entry: './src/main/index.js',
   output: {
@@ -16,7 +17,7 @@ const mainConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env', '@babel/react']
+            presets: ['@babel/env']
           }
         },
         exclude: /node_modules/
@@ -26,7 +27,7 @@ const mainConfig = {
 }
 
 const rendererConfig = {
-  mode: 'development',
+  mode: mode,
   target: 'electron-renderer',
   entry: './src/renderer/index.js',
   output: {
