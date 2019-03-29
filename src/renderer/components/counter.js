@@ -3,17 +3,23 @@ import React, { Component } from "react";
 class Counter extends Component {
   render() {
     return (
-      <p>
-        Clicked: {this.props.value} times
-        {" "}
-        <button onClick={this.props.onIncrement}>
-          +
-        </button>
-        {" "}
-        <button onClick={this.props.onDecrement}>
-          -
-        </button>
-      </p>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            Clicked: {this.props.value} times
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <button type="button" className="col btn btn-outline-primary btn-block" onClick={this.props.onIncrement}>+</button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <button type="button" className="col btn btn-outline-primary btn-block" onClick={this.props.onDecrement}>-</button>
+          </div>
+        </div>
+      </div>
     );
   }
 }
