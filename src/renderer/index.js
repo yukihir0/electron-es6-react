@@ -6,6 +6,9 @@ import Hello from './containers/Hello';
 import Counter from './containers/Counter';
 import reducer from './reducers';
 
+import "bootstrap";
+import "./index.scss";
+
 const store = createStore(reducer);
 const rootEl = document.getElementById('root');
  

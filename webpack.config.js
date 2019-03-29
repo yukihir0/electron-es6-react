@@ -1,6 +1,9 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const outputPath = path.join(__dirname, 'dist');
 const mode = 'development';
+const enableSourceMap = mode === 'development';
 
 const mainConfig = {
   mode: mode,
@@ -45,9 +48,39 @@ const rendererConfig = {
           }
         },
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract([
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: enableSourceMap,
+              importLoaders: 2 // Sass + PostCSS
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: enableSourceMap,
+              plugins: () => [require('autoprefixer')] // add vender prefix
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: enableSourceMap,
+            }
+          }
+        ]),
+      },
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+  ],
+  devtool: "source-map"
 }
 
 module.exports = [mainConfig, rendererConfig]
