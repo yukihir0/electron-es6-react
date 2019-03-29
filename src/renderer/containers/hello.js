@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Hello from '../components/hello';
+import React from "react";
+import { connect } from "react-redux";
+import Hello from "../components/hello";
  
 function mapStateToProps(state) {
 }

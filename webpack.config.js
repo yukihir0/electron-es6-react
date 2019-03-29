@@ -1,26 +1,26 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const outputPath = path.join(__dirname, 'dist');
-const mode = 'development';
-const enableSourceMap = mode === 'development';
+const outputPath = path.join(__dirname, "dist");
+const mode = "development";
+const enableSourceMap = mode === "development";
 
 const mainConfig = {
   mode: mode,
-  target: 'electron-main',
-  entry: './src/main/index.js',
+  target: "electron-main",
+  entry: "./src/main/index.js",
   output: {
     path: outputPath,
-    filename: 'main.js'
+    filename: "main.js"
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/env']
+            presets: ["@babel/env"]
           }
         },
         exclude: /node_modules/
@@ -31,20 +31,20 @@ const mainConfig = {
 
 const rendererConfig = {
   mode: mode,
-  target: 'electron-renderer',
-  entry: './src/renderer/index.js',
+  target: "electron-renderer",
+  entry: "./src/renderer/index.js",
   output: {
     path: outputPath,
-    filename: 'renderer.js'
+    filename: "renderer.js"
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/env', '@babel/react']
+            presets: ["@babel/env", "@babel/react"]
           }
         },
         exclude: /node_modules/
@@ -53,7 +53,7 @@ const rendererConfig = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract([
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               url: false,
               sourceMap: enableSourceMap,
@@ -61,14 +61,14 @@ const rendererConfig = {
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: enableSourceMap,
-              plugins: () => [require('autoprefixer')] // add vender prefix
+              plugins: () => [require("autoprefixer")] // add vender prefix
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sourceMap: enableSourceMap,
             }
@@ -78,7 +78,7 @@ const rendererConfig = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin("style.css"),
   ],
   devtool: "source-map"
 }
