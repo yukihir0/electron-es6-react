@@ -4,9 +4,12 @@
   "description": "",
   "main": "src/main/index.js",
   "scripts": {
-    "webpack": "./node_modules/.bin/webpack",
+    "webpack:development": "./node_modules/.bin/webpack",
+    "webpack:production": "./node_modules/.bin/webpack -p",
     "electron": "./node_modules/.bin/electron .",
-    "package": "./node_modules/.bin/electron-packager . electron-es6-react --platform=darwin --arch=x64"
+    "build:darwin-x64": "./node_modules/.bin/electron-packager . electron-es6-react --platform=darwin --arch=x64 --out=release --overwrite",
+    "start": "npm run webpack:development; npm run electron",
+    "release:darwin-x64": "npm run webpack:production; npm run build:darwin-x64"
   },
   "author": "",
   "license": "MIT",
