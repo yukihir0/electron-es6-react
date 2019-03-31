@@ -7,6 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "eslint": "./node_modules/.bin/eslint src/**/*.js",
+    "stylelint": "./node_modules/.bin/stylelint src/**/*.scss",
     "webpack": "./node_modules/.bin/webpack",
     "webpack:production": "./node_modules/.bin/webpack --mode=production",
     "electron": "./node_modules/.bin/electron .",
@@ -36,6 +37,10 @@
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.5.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
