@@ -24,7 +24,7 @@ exports[`snapshot 1`] = `
       className="col"
     >
       <button
-        className="col btn btn-outline-primary btn-block"
+        className="col btn btn-outline-success btn-block"
         id="btn-increment"
         type="button"
       >
@@ -39,7 +39,7 @@ exports[`snapshot 1`] = `
       className="col"
     >
       <button
-        className="col btn btn-outline-primary btn-block"
+        className="col btn btn-outline-success btn-block"
         id="btn-decrement"
         type="button"
       >
