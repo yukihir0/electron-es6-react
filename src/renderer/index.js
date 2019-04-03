@@ -1,21 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
 import {Provider} from "react-redux";
-import Hello from "./containers/Hello";
-import Counter from "./containers/Counter";
+import thunk from "redux-thunk";
+import Hello from "./containers/hello";
+import Counter from "./containers/counter";
+import AsyncCounter from "./containers/async_counter";
 import reducer from "./reducers";
 
 import "bootstrap";
 import "./index.scss";
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
 const rootEl = document.getElementById("root");
  
 ReactDOM.render(
     <Provider store={store}>
       <Hello />
       <Counter />
+      <AsyncCounter />
     </Provider>,
     rootEl
 );
