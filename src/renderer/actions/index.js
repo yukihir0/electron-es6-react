@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export function increment() {
   return { type: "INCREMENT" };
 }
@@ -19,5 +21,17 @@ export function asyncDecrement() {
     setTimeout(() => {
       dispatch({type: "ASYNC_DECREMENT"});
     }, 1000);
+  };
+}
+
+export function requestItem() {
+  const url = "https://qiita.com/api/v2/items";
+
+  return dispatch => {
+    axios.get(url).then(res => {
+      dispatch({type: "REQUEST_ITEM", items: res.data});
+    }).catch(error => {
+      dispatch({type: "REQUEST_ITEM", items: []});
+    });
   };
 }

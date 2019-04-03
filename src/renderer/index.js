@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import Hello from "./containers/hello";
 import Counter from "./containers/counter";
 import AsyncCounter from "./containers/async_counter";
+import QiitaButton from "./containers/qiita_button";
 import reducer from "./reducers";
 
 import "bootstrap";
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Hello />
       <Counter />
       <AsyncCounter />
+      <QiitaButton />
     </Provider>,
     rootEl
 );
